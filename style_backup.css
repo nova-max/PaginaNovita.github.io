@@ -39,6 +39,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+/* Custom Cursor */
+.cursor-dot,
+.cursor-outline {
     position: fixed;
     top: 0;
     left: 0;
@@ -92,7 +110,7 @@ h4 {
     backdrop-filter: blur(12px);
     z-index: 100;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: var(--shadow-sm);`r`n    transition: background 0.5s ease, border-bottom 0.5s ease;`r`n}`r`n`r`n[data-theme="dark"] .navbar {`r`n    background: rgba(15, 23, 42, 0.95);`r`n    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .logo {
@@ -699,26 +717,88 @@ footer {
     transform: translateY(50px);
 }
 
-.reveal-active {}
-
-.about-grid,
-.contact-wrapper {
-    grid-template-columns: 1fr;
+.reveal-active {
+    opacity: 1;
+    transform: translate(0);
 }
 
-.nav-links {
-    display: none;
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    z-index: 1000;
+    overflow: hidden;
 }
 
-.hamburger {
-    display: block;
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-xl);
 }
 
-.contact-wrapper {
-    padding: 2rem;
+.theme-toggle i {
+    color: #ffffff;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    transition: var(--transition);
 }
 
-.skills-grid {
-    grid-template-columns: 1fr;
+.theme-toggle .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
 }
+
+.theme-toggle .sun-icon {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0);
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .about-grid,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .contact-wrapper {
+        padding: 2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }

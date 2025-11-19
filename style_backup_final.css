@@ -92,7 +92,7 @@ h4 {
     backdrop-filter: blur(12px);
     z-index: 100;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: var(--shadow-sm);`r`n    transition: background 0.5s ease, border-bottom 0.5s ease;`r`n}`r`n`r`n[data-theme="dark"] .navbar {`r`n    background: rgba(15, 23, 42, 0.95);`r`n    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-sm);
 }
 
 .logo {
