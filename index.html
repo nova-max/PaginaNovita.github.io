@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco Antonio Giron Diaz | Full Stack Developer</title>
+    <meta name="description"
+        content="Portfolio de Marco Antonio Giron Diaz - Full Stack Developer especializado en crear experiencias digitales únicas.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">MAGD<span class="accent">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Sobre Mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+        <div class="hamburger">
+            <i data-lucide="menu"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="greeting fade-in">Hola, soy</p>
+            <h1 class="glitch-text" data-text="Marco Antonio Giron Diaz">Marco Antonio<br>Giron Diaz</h1>
+            <h2 class="subtitle fade-in-delay">Full Stack Developer & Creative Coder</h2>
+            <p class="description fade-in-delay-2">
+                Transformo ideas complejas en experiencias digitales fluidas y memorables.
+                Especializado en construir aplicaciones web modernas y escalables.
+            </p>
+            <div class="cta-group fade-in-delay-3">
+                <a href="#projects" class="btn primary">Ver Proyectos</a>
+                <a href="#contact" class="btn secondary">Contactar</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+
+        <!-- Background Elements -->
+        <div class="gradient-sphere sphere-1"></div>
+        <div class="gradient-sphere sphere-2"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre <span class="accent">Mí</span></h2>
+            <div class="about-grid">
+                <div class="about-text reveal-left">
+                    <p>
+                        Soy un desarrollador apasionado con una curiosidad insaciable por la tecnología.
+                        Mi enfoque combina la lógica de la ingeniería con la creatividad del diseño para
+                        construir soluciones que no solo funcionan perfectamente, sino que también se ven increíbles.
+                    </p>
+                    <p>
+                        Con experiencia en el ciclo completo de desarrollo, desde la arquitectura de bases de datos
+                        hasta las animaciones de frontend más sutiles, me dedico a crear software de alta calidad.
+                    </p>
+
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="number" data-target="5">0</span>+
+                            <span class="label">Años Exp.</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number" data-target="50">0</span>+
+                            <span class="label">Proyectos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="number" data-target="20">0</span>+
+                            <span class="label">Clientes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-container reveal-right">
+                    <h3>Tech Stack</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card"><i data-lucide="code-2"></i><span>Frontend</span></div>
+                        <div class="skill-card"><i data-lucide="server"></i><span>Backend</span></div>
+                        <div class="skill-card"><i data-lucide="database"></i><span>Database</span></div>
+                        <div class="skill-card"><i data-lucide="layout"></i><span>UI/UX</span></div>
+                    </div>
+                    <div class="tech-tags">
+                        <span>JavaScript</span><span>React</span><span>Node.js</span>
+                        <span>Python</span><span>SQL</span><span>TypeScript</span>
+                        <span>Git</span><span>Docker</span><span>AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Mis <span class="accent">Proyectos</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card reveal-bottom">
+                    <div class="project-image">
+                        <div class="overlay"></div>
+                        <!-- Placeholder for project image -->
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #2b1055, #7597de);">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Neon Commerce</h3>
+                        <p>Plataforma de e-commerce futurista con animaciones 3D y pagos en tiempo real.</p>
+                        <div class="tags">
+                            <span>React</span><span>Three.js</span><span>Stripe</span>
+                        </div>
+                        <div class="links">
+                            <a href="#" class="icon-link"><i data-lucide="github"></i></a>
+                            <a href="#" class="icon-link"><i data-lucide="external-link"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card reveal-bottom" style="transition-delay: 100ms;">
+                    <div class="project-image">
+                        <div class="overlay"></div>
+                        <div class="placeholder-img"
+                            style="background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Dashboard</h3>
+                        <p>Panel de control analítico impulsado por IA para visualización de datos complejos.</p>
+                        <div class="tags">
+                            <span>Python</span><span>D3.js</span><span>TensorFlow</span>
+                        </div>
+                        <div class="links">
+                            <a href="#" class="icon-link"><i data-lucide="github"></i></a>
+                            <a href="#" class="icon-link"><i data-lucide="external-link"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card reveal-bottom" style="transition-delay: 200ms;">
+                    <div class="project-image">
+                        <div class="overlay"></div>
+                        <div class="placeholder-img"
+                            style="background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);"></div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Crypto Pulse</h3>
+                        <p>Aplicación de seguimiento de criptomonedas en tiempo real con alertas personalizadas.</p>
+                        <div class="tags">
+                            <span>Vue.js</span><span>WebSocket</span><span>Node.js</span>
+                        </div>
+                        <div class="links">
+                            <a href="#" class="icon-link"><i data-lucide="github"></i></a>
+                            <a href="#" class="icon-link"><i data-lucide="external-link"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Hablemos</h2>
+            <div class="contact-wrapper reveal-bottom">
+                <div class="contact-info">
+                    <h3>¿Tienes un proyecto en mente?</h3>
+                    <p>Estoy siempre abierto a discutir nuevos proyectos, ideas creativas o oportunidades para ser parte
+                        de tus visiones.</p>
+
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i data-lucide="mail"></i>
+                            <span>contacto@marcogiron.dev</span>
+                        </div>
+                        <div class="detail-item">
+                            <i data-lucide="map-pin"></i>
+                            <span>Remoto / Global</span>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-btn"><i data-lucide="github"></i></a>
+                        <a href="#" class="social-btn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" class="social-btn"><i data-lucide="twitter"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <input type="text" required placeholder=" ">
+                        <label>Nombre</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" required placeholder=" ">
+                        <label>Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea required placeholder=" "></textarea>
+                        <label>Mensaje</label>
+                    </div>
+                    <button type="submit" class="btn primary full-width">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Marco Antonio Giron Diaz. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
