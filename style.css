@@ -1,14 +1,12 @@
 /* Variables & Reset */
 :root {
-    --bg-dark: #0a0a0a;
-    --bg-card: #171717;
-    --text-primary: #ffffff;
-    --text-secondary: #a3a3a3;
-    --accent-primary: #00f2ea;
-    /* Cyan Neon */
-    --accent-secondary: #ff0050;
-    /* Red/Pink Neon */
-    --accent-glow: rgba(0, 242, 234, 0.5);
+    --bg-dark: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #525252;
+    --accent-primary: #0077b6;
+    --accent-secondary: #9b2226;
+    --accent-glow: rgba(0, 119, 182, 0.2);
 
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -82,21 +80,6 @@ h4 {
 /* Navbar */
 .navbar {
     position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 1.5rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -428,29 +411,6 @@ h4 {
 
 /* Projects Grid */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-}
-
-.project-card {
-    background: var(--bg-card);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition);
-    position: relative;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent-primary);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.project-image {
-    height: 200px;
-    position: relative;
     overflow: hidden;
 }
 
@@ -568,29 +528,6 @@ h4 {
 }
 
 /* Form */
-.form-group {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem 0;
-    color: var(--text-primary);
-    font-size: 1rem;
-    font-family: var(--font-body);
-    outline: none;
-    transition: var(--transition);
-}
-
-.form-group textarea {
-    resize: none;
-    height: 100px;
-}
 
 .form-group label {
     position: absolute;
