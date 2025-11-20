@@ -129,3 +129,39 @@ themeToggle.addEventListener('click', () => {
         themeToggle.style.transform = '';
     }, 300);
 });
+
+
+// Mobile Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenu = document.getElementById('close-menu');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+// Open mobile menu
+hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+});
+
+// Close mobile menu
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Close menu when clicking on a link
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+});
+
+// Close menu when clicking outside
+mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
