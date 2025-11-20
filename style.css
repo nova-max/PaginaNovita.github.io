@@ -1,4 +1,4 @@
-/* Variables & Reset */
+﻿/* Variables & Reset */
 :root {
     --bg-dark: #f0f4f8;
     --bg-card: #ffffff;
@@ -153,6 +153,23 @@ h4 {
     left: 0;
     width: 0;
     height: 2px;
+    background: var(--accent-primary);
+    transition: var(--transition);
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -766,53 +783,110 @@ footer {
     transform: rotate(0deg) scale(1) translateX(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg-card);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
 
-    /* Hero Section */
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .mobile-menu {
+    background: var(--bg-card);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .mobile-menu-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.close-menu:hover {
+    color: var(--accent-primary);
+    transform: rotate(90deg);
+}
+
+.close-menu i {
+    width: 24px;
+    height: 24px;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 2rem 0;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    margin: 0;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 1.2rem 2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(0, 119, 182, 0.1);
+    border-left-color: var(--accent-primary);
+    color: var(--accent-primary);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .section {
+        padding: 6rem 5%;
+    }
+
     .hero h1 {
-        font-size: 2.5rem;
-        line-height: 1.2;
+        font-size: 4rem;
     }
 
-    .hero h2 {
-        font-size: 1.3rem;
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
+}
 
-    .greeting {
-        font-size: 1.2rem;
-    }
-
-    .description {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    /* Buttons */
-    .btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.85rem;
-    }
-
-    .btn.secondary {
-        margin-left: 0;
-        margin-top: 1rem;
-    }
-
-    .hero .btn {
-        display: block;
-        width: 100%;
-        max-width: 280px;
-        margin: 0.5rem auto;
-    }
-
-    /* Navbar */
+@media (max-width: 768px) {
     .navbar {
         padding: 1rem 5%;
-    }
-
-    .logo {
-        font-size: 1.3rem;
     }
 
     .nav-links {
@@ -821,134 +895,91 @@ footer {
 
     .hamburger {
         display: block;
+        font-size: 1.5rem;
+        color: var(--text-primary);
+        transition: var(--transition);
     }
 
-    /* Sections */
-    .section {
-        padding: 4rem 5%;
-        min-height: auto;
+    .hamburger:hover {
+        color: var(--accent-primary);
     }
 
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 2rem;
+    .hamburger i {
+        width: 24px;
+        height: 24px;
     }
 
-    /* About & Contact Grid */
-    .about-grid,
-    .contact-wrapper {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .about-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
-    .contact-wrapper {
-        padding: 2rem;
-    }
-
-    /* Stats */
     .stats {
         flex-direction: column;
         gap: 1.5rem;
-        align-items: flex-start;
     }
 
-    .stat-item .number {
-        font-size: 2rem;
-    }
-
-    /* Skills */
-    .skills-grid {
+    .contact-wrapper {
         grid-template-columns: 1fr;
+        padding: 2rem;
     }
 
-    .skill-card {
-        padding: 1rem;
-    }
-
-    /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .project-card {
+        max-width: 500px;
         margin: 0 auto;
-        max-width: 400px;
     }
 
-    /* Theme Toggle Button */
     .theme-toggle {
-        bottom: 1rem;
-        right: 1rem;
         width: 60px;
         height: 35px;
-        border-radius: 20px;
+        bottom: 1.5rem;
+        right: 1.5rem;
     }
 
     .theme-toggle:hover {
         width: 60px;
-    }
-
-    .theme-toggle i {
-        width: 18px;
-        height: 18px;
-    }
-
-    /* Custom Cursor - Disable on Mobile */
-    .cursor-dot,
-    .cursor-outline {
-        display: none;
-    }
-
-    body {
-        cursor: auto;
-    }
-
-    /* Scroll Indicator */
-    .scroll-indicator {
-        display: none;
-    }
-
-    /* Background Spheres - Reduce on Mobile */
-    .sphere-1,
-    .sphere-2 {
-        width: 250px;
-        height: 250px;
-        filter: blur(80px);
+        /* Disable expansion on mobile */
     }
 }
 
-/* Extra Small Devices */
 @media (max-width: 480px) {
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero h2 {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .btn.secondary {
+        margin-left: 0;
     }
 
     .section-title {
-        font-size: 1.75rem;
+        font-size: 2.5rem;
     }
 
-    .navbar {
-        padding: 0.8rem 4%;
-    }
-
-    .contact-wrapper {
-        padding: 1.5rem;
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
     .theme-toggle {
         width: 55px;
         height: 32px;
-        bottom: 0.8rem;
-        right: 0.8rem;
-    }
-
-    .theme-toggle i {
-        width: 16px;
-        height: 16px;
     }
 }
